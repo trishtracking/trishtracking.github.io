@@ -1,24 +1,31 @@
-var i= 0; //start point
-var images =[];
-var time = 3000;
 
-images[0] = "freecodecamp-128.png";
-images[1] = "iconfinder_codewars_4691329";
-images[2] = "freecodecamp-128.png";
-images[3] = "iconfinder_codewars_4691329";
-images[4] = "freecodecamp-128.png";
 
-function nextImage() {
-  document.carousel.src = images[i];
+var slides = document.querySelectorAll('#slideshow-container .albumCovers');
+var currentSlide = 0;
+var slideInterval = setInterval(nextSlide,3000);
 
-  if (images[i] < images.length - 1) {
-    i++;
-  } else {
-    i = 0;
-  }
-
-  setTimeout("nextImage()", time); 
-
+function nextSlide(){
+	slides[currentSlide].className = 'albumCovers';
+	currentSlide = (currentSlide+1)%slides.length;
+	slides[currentSlide].className = 'albumCovers showing';
 }
 
-window.onload = nextImage;
+var playing = true;
+var pauseButton = document.getElementById('pause');
+
+function pauseCarousel(){
+	pauseButton.innerHTML = 'Play';
+	playing = false;
+	clearInterval(slideInterval);
+}
+
+function playCarousel(){
+	pauseButton.innerHTML = 'Stop';
+	playing = true;
+	slideInterval = setInterval(nextSlide,3000);
+}
+
+pauseButton.onclick = function(){
+	if(playing){ pauseCarousel(); }
+	else{ playCarousel(); }
+};
