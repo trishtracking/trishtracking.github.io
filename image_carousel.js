@@ -1,6 +1,6 @@
 
 
-var slides = document.querySelectorAll('#slideshow-container .albumCovers');
+var slides = document.querySelectorAll('#slideshow .albumCovers');
 var currentSlide = 0;
 var slideInterval = setInterval(nextSlide,3000);
 

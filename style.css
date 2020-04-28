@@ -1,61 +1,76 @@
 
 
 @media (max-height: 800px){
-  p {
+    p {
      font-size: 10px;
-   }
-   }
+    }
+  }
 
 .parent {
     display: grid;
     grid-template-columns: 1.2fr repeat(2, 2fr);
     grid-template-rows: 1fr .5fr repeat(3, 2fr) 1fr;
     grid-column-gap: 10px;
-    grid-row-gap: px;
-    }
+    grid-row-gap: 0px;
+  }
     
     
-.div1 { grid-area: 1 / 1 / 2 / 4; 
-        /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgb(153,98,149);
-        background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%); 
-        }
-.div2 { grid-area: 3 / 1 / 4 / 2;
+.heading { 
+    grid-area: 1 / 1 / 2 / 4; 
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgb(153,98,149);
+    background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%); 
+  }
+
+.introHead { 
+    grid-area: 3 / 1 / 4 / 2;
     background-color: #450808;
-        }
-.div3 { grid-area: 3 / 2 / 4 / 4;
+    text-align: right; 
+  }
+
+.introBody {
+    grid-area: 3 / 2 / 4 / 4;
     color: #2f2f31;
     font-size: 20;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.8;
-    }
+  }
 
-        }
-.div4 { grid-area: 4 / 1 / 5 / 2;
+.carouselHead { 
+    grid-area: 4 / 1 / 5 / 2;
     background-color: #450808;
+    text-align: right;
+  }
 
-        }
-.div5 { grid-area: 4 / 2 / 5 / 4;
-        }
-.div6 { grid-area: 5 / 1 / 6 / 2;
+
+.carouselBody { 
+    grid-area: 4 / 2 / 5 / 4;
+  }
+
+.linksHead { 
+    grid-area: 5 / 1 / 6 / 2;
     background-color: #450808;
-        }
-.div7 { grid-area: 5 / 2 / 6 / 4;
-        }
+    text-align: right;
+  }
 
-.div8 { grid-area: 6 / 1 / 7 / 4; 
-        padding: 20px;
-        text-align: center; 
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-        background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%);
-    } 
+.linksBody { 
+    grid-area: 5 / 2 / 6 / 4;
+  }
 
-.div8:hover {
-        background-color: #714141;
-      }
+.foot { 
+    grid-area: 6 / 1 / 7 / 4; 
+    padding: 20px;
+    text-align: center; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%);
+  } 
+
+.foot:hover {
+    background-color: #714141;
+  }
 
 h1 {
     color: #450808 ;
@@ -63,7 +78,7 @@ h1 {
     font-style: Bold;
     font-family: 'Ubuntu Mono', monospace;
     text-align: center;
-}
+  } 
 /* #6D0E0E 
 #450808
 */
@@ -72,14 +87,14 @@ h2 {
     font-size: 35px; 
     font-style: Bold;
     font-family: 'Ubuntu Mono', monospace;
-}
+  }
 
 h3 {
     color: #450808 ;
     font-size: 20px; 
     font-style: Bold;
     font-family: 'Ubuntu Mono', monospace;
-}
+  }
 
 p, a  {
     color: #2f2f31;
@@ -88,33 +103,34 @@ p, a  {
     line-height: 1.8;
     }
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: inline;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: #450808 ;
-    font-size: 20px; 
-    font-style: Bold;
-    font-family: 'Ubuntu Mono', monospace;
-  }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: inline;
+      background-color: #333;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: #450808 ;
+      font-size: 20px; 
+      font-style: Bold;
+      font-family: 'Ubuntu Mono', monospace;
+    }
 
-  li a:hover {
+
+    .heading li a :hover {
     background-color:#d67878;
-  }
+    }
 
 
 .icon {
@@ -122,80 +138,188 @@ p, a  {
     height: 40px;
     align: center;
     border-width: 2px;
-    border-color: #2f2f31;
+    border-color: #450808;
     padding: 10px; 
     border-style: dashed;
     border-radius: 50%;
     padding: 14px; 
 }
 
-<!--clip-path: polygon(50% 0%, 0% 100%, 100% 100%); --> 
+/* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 
+.carouselBody .carouselDiv {
+  width: 100%;
+  height: 600px;
+  max-width: 800px; 
+  margin: auto;
+  user-select: none; 
+  padding: 10px; 
+  box-sizing: border-box; 
 }
-.sidebar {
-    text-align: right;
-}
+ .carouselBody .carouselDiv .albumCrate {
+  width: 80%;
+  height: 80%;
+  user-select: none; 
+  overflow: hidden;
+  position: relative; 
+  background-color: #d67878;
+ }
 
-.carousel {
-    background-color: #714141;
-
-}
-
-
-#slides{
-	position: relative;
-	height: 400px;
-  width: 400px;
-	padding: 0px;
-	margin: 0px;
-	list-style-type: none;
-}
-
-.slide{
+.carouselBody .carouselDiv .albumCrate .albumCovers {
 	position: absolute;
-	left: 0px;
-	top: 0px;
 	width: 100%;
 	height: 100%;
-	opacity: 0;
-	z-index: 1;
-
-	transition: opacity 1s;
-}
-
-.showing{
 	opacity: 1;
-	z-index: 2;
+}
+
+.carouselBody .carouselDiv .albumCrate .albumCovers img{
+  width: 80%;
+  height: 80%;
+  max-width: 500px; 
+  max-height: 500px; 
+  position: relative; 
+  
 }
 
 
-
-/*
-non-essential styles:
-just for appearance; change whatever you want
-*/
-
-.slide{
-	font-size: 40px;
-  font-face: 'Ubuntu Mono', monospace;
-	padding: 40px;
-	box-sizing: border-box;
-	background: #33ffff;
-	color: #ff3333;
+.carouselBody .carouselDiv .albumCrate .albumCovers .albumName {
+  display: none; 
 }
 
-.slide:nth-of-type(1){
-	background: red;
+/* left arrow div styling */
+.carouselBody .carouselDiv .albumCrate .leftArrow, .carouselBody .carouselDiv .albumCrate .rightArrow {
+  width: 30px;
+  height: 60px; 
+  background: #a78888; 
+  position: absolute; 
+  /* border-color: #450808;
+  border-style: dashed;
+  border-radius: 50%; */
+  left: 0;
+  z-index: 1;
+  transition: background 0.5s; 
+  top: 50%;
+  transform: translateY(-50%);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 0px; 
+  border-bottom-right-radius: 25px; 
+
 }
-.slide:nth-of-type(2){
-	background: orange;
+
+/* right arrow div styling, overwrites above */
+.carouselBody .carouselDiv .albumCrate .rightArrow {
+  left: auto;
+  right: 0;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 0px;
 }
-.slide:nth-of-type(3){
-	background: green;
+
+/* hover action for arrows */
+.carouselBody .carouselDiv .albumCrate .leftArrow:hover {
+  background: #d67878; 
+  cursor: w-resize;
 }
-.slide:nth-of-type(4){
-	background: blue;
+
+.carouselBody .carouselDiv .albumCrate .rightArrow:hover {
+  background: #d67878; 
+  cursor: e-resize;
 }
-.slide:nth-of-type(5){
-	background: purple;
+
+/* making little arrows with css :) */
+.carouselBody .carouselDiv .albumCrate .arrow {
+  display: inline-block;
+  border: 2px solid #450808; 
+  width: 8px;
+  height: 8px; 
+  border-left: none; 
+  border-bottom: none; 
+  margin: auto; 
+  position: absolute; 
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top; 0;
+}
+
+/* rotating my little arrow squares so they point the right way (:  */
+.carouselBody .carouselDiv .albumCrate .arrow.arrowLeft {
+  transform: rotateZ(-135deg);
+}
+
+.carouselBody .carouselDiv .albumCrate .arrow.arrowRight {
+  transform: rotateZ(45deg);
+}
+
+.carouselBody .carouselDiv .albumCrate>.albumNameHolder {
+  position: absolute; 
+  bottom: 0;
+  z-index: 1;
+  color: #450808;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 20px; 
+  text-align: left; 
+  width: 100%; 
+  background: #a78888;
+  height: 40px; 
+  line-height: 30px; 
+  overflow: hidden;  
+}
+
+.carouselBody .carouselDiv .albumCrate>.albumNameHolder>.albumName {
+  margin: 0;
+  color: #450808;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 20px; 
+  text-align: left; 
+}
+
+.carouselBody .carouselDiv .albumCrate .moveLeftCurrentAlbum{
+  animation-name: moveLeftCurrent;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards; 
+}
+
+.carouselBody .carouselDiv .albumCrate .moveRightCurrentAlbum{
+  animation-name: moveRightCurrent;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards; 
+}
+
+.carouselBody .carouselDiv .albumCrate .moveLeftNextAlbum{
+  animation-name: moveLeftNext;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards; 
+}
+
+.carouselBody .carouselDiv .albumCrate .moveRightPreviousAlbum{
+  animation-name: moveRightPrevious;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-fill-mode:forwards; 
+}
+
+@keyframes moveLeftCurrent {
+  from{margin-left: 0; opacity: 1;}
+  to{margin-left: -100%; opacity: 1;}
+}
+
+@keyframes moveLeftNext {
+  from {margin-left: 100%; opacity: 1;}
+  to {margin-left: 0%%; opacity: 1;}
+}
+
+@keyframes moveRightCurrent {
+  from {margin-left: 0; opacity: 1;}
+  to {margin-left: 100%; opacity: 1;}
+}
+
+@keyframes moveRightPrevious {
+  from {margin-left: -100%; opacity: 1;}
+  to {margin-left: 0%%; opacity: 1;}
 }
