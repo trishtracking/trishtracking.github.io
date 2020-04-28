@@ -23,19 +23,17 @@
             - Include an image carousel (the image carousel must be built into your website, a link to a separate page or CodePen will not be accepted)
             - *Be hosted on GitHub
             - *Not use a GitHub theme
-            - *Not use any JavaScript or CSS libraries like Bootstrap or jQuery or use an image carousel package like Flickity ⁠— we want to see your own code.</p> 
-
-            
+            - *Not use any JavaScript or CSS libraries like Bootstrap or jQuery or use an image carousel package like Flickity ⁠— we want to see your own code.</p>        
  --> 
 
     
     <body>
-        <div class="div1 heading">
+        <div class="heading">
             <header>
                 <!-- page headline -->
                 <h1>Patricia Wynne | Founders + Coders 20 </h1>
                 <!-- navbar  -->
-                <nav class="nav_bar">
+                <nav id="nav">
                     <ul>
                       <li><a href="#intro" accesskey="i">Intro</a></li>
                       <li><a href="#why" accesskey="w">Why I'm applying</a></li>
@@ -50,25 +48,25 @@
 
              <!-- leftside subheading for intro section -->
 
-            <div class="div2 sidebar"> 
+            <div class="introHead"> 
                 <h2>A lil sub heading for ya</h2>
             </div>
 
              <!-- intro section -->
 
-            <div class="div3"> 
-            <main>
+            <div class="introBody"> 
+                <main>
                 <p id="intro">
                 <section>TO ADD: Why coding</section>
                 </p>
                 <section>TO ADD: Why FAC 2020</section><br>
-            </main>
-        </div>
+                </main>
+             </div>
 
              <!-- leftside subheading for carousel section -->
-        <div class="div4"> 
-            <h2>Tracks that got me through the prerequisites</h2> 
-        </div>
+            <div class="carouselHead"> 
+                <h2>Albums that got me through the prerequisites</h2> 
+            </div>
 
              <!-- carousel section -->
              <!-- Features
@@ -82,60 +80,64 @@ Document Object Model (DOM)
 Accessing and manipulating the DOM with JavaScript
 Adding event listeners to react to user input -->
 
-                <!-- carousel pics -->
-            <div class="div5 carousel"> 
-                      <div id="slideshow-container">
+                <!-- carousel-->
+            <div class="carouselBody">
+                <div class="albumCrate"> 
 
-                        <div class="albumCovers showing">
-                          <img src="metronomy.jpeg" style="width:100%">
-                          <div> Metronomy: Love Letters</div>
-                        </div>
-              
-                        <div class="albumCovers">
-                          <img src="glossdrop.jpg" style="width:100%">
-                          <div>Battles: Gloss Drop</div>
-                        </div>
-              
-                        <div class="albumCovers">
-                          <img src="alive.jpg" style="width:100%">
-                          <div>Daft Punk: Alive</div>
-                        </div>
-              
-                        <div class="albumCovers">
-                          <img src="classics.jpg" style="width:100%">
-                          <div>Ratatat: Classics</div>
-                        </div>
-              
-                        <div class="albumCovers">
-                          <img src="toddterje.png" style="width:100%">
-                          <div>Todd Terje: It's Album Time</div>
-                        </div>
-              
-                       
-                   <!-- controls  -->
-                    <button class="controls" id="left">
-                         &lt;</button>
-                    <button class="controls" id="play">
-                      Play</button>
-                    <button class="controls" id="pause">Pause</button>
-                    <button class="controls" id="Right">
-                         &gt;</button>
+                     <!-- controls  -->
+                    <div id="playPause"></div>
+                    <div class="nextPrevBtn leftArrow">
+                        <span class="arrow arrowLeft"></span>
+                    </div>
+                    <div class="nextPrevBtn rightArrow">
+                        <span class="arrow arrowLeft"></span>
+                    </div>
+                    <div class="albumNameHolder"><p class="albumName slideTextFromTop"></p></div>
+                    <div id="placeHolder"></div>
+
+                    <!-- album covers  -->
+                    <div class="albumCovers showing">
+                        <img src="metronomy.jpeg" alt="Metronomy: Love Letters" >
+                        <h3 class="albumName">Metronomy: Love Letters</h3>
+                    </div>
+                    <div class="albumCovers">
+                        <img src="glossdrop.jpg" alt="Battles: Gloss Drop">
+                        <h3 class="albumName">Battles: Gloss Drop</h3>
+                    </div>
+                    <div class="albumCovers">
+                        <img src="alive.jpg" alt="Daft Punk: Alive">
+                        <h3 class="albumName">Daft Punk: Alive</h3>
+                    </div>
+
+                    <div class="albumCovers">
+                        <img src="classics.jpg" alt="Ratatat: Classics">
+                        <h3 class="albumName">Ratatat: Classics</h3>
+                    </div>
+                    <div class="albumCovers">
+                        <img src="toddterje.png" alt="Todd Terje: It's Album Time">
+                        <h3 class="albumName">Todd Terje: It's Album Time</h3>
+                    </div>
+
+                           
+                
+                
+                </div>
             </div>
 
-            <div class="div6 sidebar">
+            <div class="linksHead">
                 <h2>Look @ Me Go</h2>
             </div>
-            <div class="div7"> 
-                <footer id="links">
+            <div class="linksBody"> 
                     <a target="_blank" accesskey="g" href="https://github.com/trishtracking/trishtracking.github.io"><img class="icon" src="298822-48.png" alt="GitHub repo for this page"></a>
                     <a target="_blank" accesskey="f" href="https://www.freecodecamp.org/fccbb2eef38-b051-4505-9f23-cece97b03e03"><img class="icon" src="freecodecamp-128.png" alt="FreeCodeCamp profile" ></a>
                     <a target="_blank" accesskey="c" href="https://www.codewars.com/users/trishtracking"><img class="icon" src="iconfinder_codewars_4691329.png" alt="CodeWars profile"></a>
-               </footer>
             </div>
 
             <!-- footer -->
-            <div class="div8">
+            <div class="foot">
+                <footer>
                 <h3>Made with love, sweat and caffeine | <time datetime="2020-04">April 2020</time></h3>
+                </footer> 
             </div>
 
         
