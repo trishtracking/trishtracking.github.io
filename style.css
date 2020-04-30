@@ -6,33 +6,35 @@
     }
   }
 
-.parent {
+  .parent {
     display: grid;
-    grid-template-columns: 1.2fr repeat(2, 2fr);
-    grid-template-rows: 1fr .5fr repeat(3, 2fr) 1fr;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr repeat(3, 2fr) 1fr;
     grid-column-gap: 10px;
     grid-row-gap: 0px;
-  }
-    
+    }
+
     
 .heading { 
-    grid-area: 1 / 1 / 2 / 4; 
+    grid-area: 1 / 1 / 2 / 3; 
     /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+    z-index: 6;
     position: fixed;
-    top: 0;
+    top: 0; 
     width: 100%;
     background: rgb(153,98,149);
     background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%); 
   }
 
 .introHead { 
-    grid-area: 3 / 1 / 4 / 2;
+    grid-area: 2 / 1 / 3 / 2;
     background-color: #450808;
+    position: relative;
     text-align: right; 
   }
 
 .introBody {
-    grid-area: 3 / 2 / 4 / 4;
+    grid-area: 2 / 2 / 3 / 3;
     color: #2f2f31;
     font-size: 20;
     font-family: 'Open Sans', sans-serif;
@@ -40,28 +42,28 @@
   }
 
 .carouselHead { 
-    grid-area: 4 / 1 / 5 / 2;
+    grid-area: 3 / 1 / 4 / 2;
     background-color: #450808;
     text-align: right;
   }
 
 
 .carouselBody { 
-    grid-area: 4 / 2 / 5 / 4;
+    grid-area: 3 / 2 / 4 / 3;
   }
 
 .linksHead { 
-    grid-area: 5 / 1 / 6 / 2;
+    grid-area: 4 / 1 / 5 / 2;
     background-color: #450808;
     text-align: right;
   }
 
 .linksBody { 
-    grid-area: 5 / 2 / 6 / 4;
+    grid-area: 4 / 2 / 5 / 3;
   }
 
 .foot { 
-    grid-area: 6 / 1 / 7 / 4; 
+    grid-area: 5 / 1 / 6 / 3; 
     padding: 20px;
     text-align: center; 
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -147,38 +149,80 @@ p, a  {
 
 /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 
+/* carousel css  */
+
 .carouselBody .carouselDiv {
   width: 100%;
-  height: 600px;
-  max-width: 800px; 
+  height: 500px;
+  max-width: 1000px; 
+  /* position: relative; */
   margin: auto;
   user-select: none; 
   padding: 10px; 
   box-sizing: border-box; 
 }
  .carouselBody .carouselDiv .albumCrate {
-  width: 80%;
-  height: 80%;
-  user-select: none; 
+  width: 100%;
+  height: 90%;
   overflow: hidden;
   position: relative; 
   background-color: #d67878;
  }
 
+ /* play/pause button */
+ /* .carouselBody .carouselDiv #playPause {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+  cursor: pointer; 
+  z-index: 5; 
+  position: absolute;
+  border-color: transparent transparent transparent #450808;
+  transition: 200ms all ease; */
+
+  
+  
+
+  /* play state */
+  /* border-style: solid;
+  border-width: 37px 0 37px 60px;
+
+  &.paused {
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+  }
+
+  &:hover {
+    border-color: transparent transparent transparent #450808;
+  } */
+
+  .carouselBody .carouselDiv .albumCrate #playPause{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-image: url(playPause.png);
+    background-repeat: no-repeat;
+    z-index: 5;
+    background-size: cover;
+    margin: 5px;
+    cursor: pointer;
+}
+.carouselBody .carouselDiv .albumCrate #playPause:hover{
+    opacity: .7;
+}
+
 .carouselBody .carouselDiv .albumCrate .albumCovers {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	opacity: 1;
+	opacity: 0;
 }
 
 .carouselBody .carouselDiv .albumCrate .albumCovers img{
-  width: 80%;
-  height: 80%;
-  max-width: 500px; 
-  max-height: 500px; 
-  position: relative; 
-  
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -187,24 +231,19 @@ p, a  {
 }
 
 /* left arrow div styling */
-.carouselBody .carouselDiv .albumCrate .leftArrow, .carouselBody .carouselDiv .albumCrate .rightArrow {
-  width: 30px;
-  height: 60px; 
+.carouselBody .carouselDiv .albumCrate .leftArrow, 
+.carouselBody .carouselDiv .albumCrate .rightArrow {
+  width: 25px;
+  height: 50px; 
   background: #a78888; 
   position: absolute; 
-  /* border-color: #450808;
-  border-style: dashed;
-  border-radius: 50%; */
   left: 0;
   z-index: 1;
-  transition: background 0.5s; 
+  transition: background 0.7s; 
   top: 50%;
   transform: translateY(-50%);
-  border-top-left-radius: 0px;
   border-top-right-radius: 25px;
-  border-bottom-left-radius: 0px; 
   border-bottom-right-radius: 25px; 
-
 }
 
 /* right arrow div styling, overwrites above */
@@ -231,7 +270,7 @@ p, a  {
 /* making little arrows with css :) */
 .carouselBody .carouselDiv .albumCrate .arrow {
   display: inline-block;
-  border: 2px solid #450808; 
+  border: 2.5px solid #450808; 
   width: 8px;
   height: 8px; 
   border-left: none; 
@@ -241,7 +280,7 @@ p, a  {
   left: 0;
   bottom: 0;
   right: 0;
-  top; 0;
+  top: 0;
 }
 
 /* rotating my little arrow squares so they point the right way (:  */
@@ -255,49 +294,45 @@ p, a  {
 
 .carouselBody .carouselDiv .albumCrate>.albumNameHolder {
   position: absolute; 
-  bottom: 0;
   z-index: 1;
+  bottom: 0;
   color: #450808;
   font-family: 'Ubuntu Mono', monospace;
   font-size: 20px; 
-  text-align: left; 
+  text-align: center; 
   width: 100%; 
   background: #a78888;
-  height: 40px; 
-  line-height: 30px; 
+  height: 50px; 
+  line-height: 50px; 
   overflow: hidden;  
 }
 
 .carouselBody .carouselDiv .albumCrate>.albumNameHolder>.albumName {
   margin: 0;
-  color: #450808;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 20px; 
-  text-align: left; 
 }
 
-.carouselBody .carouselDiv .albumCrate .moveLeftCurrentAlbum{
+.carouselBody .carouselDiv .moveLeftCurrentAlbum{
   animation-name: moveLeftCurrent;
   animation-duration: 0.8s;
   animation-timing-function: linear;
-  animation-fill-mode:forwards; 
+  animation-fill-mode: forwards; 
 }
 
-.carouselBody .carouselDiv .albumCrate .moveRightCurrentAlbum{
+.carouselBody .carouselDiv .moveRightCurrentAlbum{
   animation-name: moveRightCurrent;
   animation-duration: 0.8s;
   animation-timing-function: linear;
-  animation-fill-mode:forwards; 
+  animation-fill-mode: forwards; 
 }
 
-.carouselBody .carouselDiv .albumCrate .moveLeftNextAlbum{
+.carouselBody .carouselDiv .moveLeftNextAlbum{
   animation-name: moveLeftNext;
   animation-duration: 0.8s;
   animation-timing-function: linear;
-  animation-fill-mode:forwards; 
+  animation-fill-mode: forwards; 
 }
 
-.carouselBody .carouselDiv .albumCrate .moveRightPreviousAlbum{
+.carouselBody .carouselDiv .moveRightPreviousAlbum{
   animation-name: moveRightPrevious;
   animation-duration: 0.8s;
   animation-timing-function: linear;
@@ -305,8 +340,8 @@ p, a  {
 }
 
 @keyframes moveLeftCurrent {
-  from{margin-left: 0; opacity: 1;}
-  to{margin-left: -100%; opacity: 1;}
+  from {margin-left: 0%; opacity: 1;}
+  to {margin-left: -100%; opacity: 1;}
 }
 
 @keyframes moveLeftNext {
@@ -315,11 +350,11 @@ p, a  {
 }
 
 @keyframes moveRightCurrent {
-  from {margin-left: 0; opacity: 1;}
-  to {margin-left: 100%; opacity: 1;}
+  from {margin-left: 0%;opacity: 1;}
+  to {margin-left: 100%;opacity: 1;}
 }
 
 @keyframes moveRightPrevious {
-  from {margin-left: -100%; opacity: 1;}
-  to {margin-left: 0%%; opacity: 1;}
+  from {margin-left: -100%;opacity: 1;}
+  to {margin-left: 0%;opacity: 1;}
 }

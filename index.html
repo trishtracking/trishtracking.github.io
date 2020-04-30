@@ -28,6 +28,7 @@
 
     
     <body>
+        <div class="parent">
         <div class="heading">
             <header>
                 <!-- page headline -->
@@ -43,8 +44,7 @@
                   </nav>
             </header>
         </div>
-        
-        <div class="parent">
+    
 
              <!-- leftside subheading for intro section -->
 
@@ -86,15 +86,16 @@ Adding event listeners to react to user input -->
                 <div class="albumCrate"> 
 
                      <!-- controls  -->
-                    <div id="playPause"></div>
-                    <div class="nextPrevBtn leftArrow">
+                    <div id="playPause" onclick="playPauseAlbums()" class="playbutton"></div>
+                    <div onclick="plusAlbums(-1)" class="nextPrevBtn leftArrow">
                         <span class="arrow arrowLeft"></span>
                     </div>
-                    <div class="nextPrevBtn rightArrow">
+                    <div onclick="plusAlbums(1)" class="nextPrevBtn rightArrow">
                         <span class="arrow arrowRight"></span>
                     </div>
                     <div class="albumNameHolder"><p class="albumName"></p></div>
                     <div id="placeHolder"></div>
+
 
                     <!-- album covers  -->
                     <div class="albumCovers">
@@ -137,7 +138,7 @@ Adding event listeners to react to user input -->
                 <h3>Made with love, tunes and caffeine | <time datetime="2020-04">April 2020</time></h3>
                 </footer> 
             </div>
-
+    </div>
         
     </body>
     <script src="image_carousel.js"></script>
