@@ -1,16 +1,16 @@
 
 
-var albumIndex,albums,albumNameHolder; 
+var albumIndex,albums,albumName; 
 function initAlbums(){
 	albumIndex = 0;
-	albums = document.getElementsByClassName("albumCovers");
-	albums[albumIndex].style.opacity=1; 
+	albums=document.getElementsByClassName("albumCovers");
+	albums[albumIndex].style.opacity= 1; 
 
 	albumName = document.querySelector(".albumNameHolder .albumName");
 	albumName.innerText = albums[albumIndex].querySelector(".albumName").innerText; 
 
  //disable nextPrevBtn if first album 
- if(albums.length<=1){
+ if(albums.length<2) {
 	var nextPrevBtns=document.querySelector(".leftArrow,.rightArrow");
 	nextPrevBtns.style.display="none";
 	for (i = 0; i < nextPrevBtn.length; i++) {
@@ -20,23 +20,24 @@ function initAlbums(){
 
 initAlbums(); 
 function plusAlbums(n) {
-	moveSlide(albumIndex+n);
+	moveAlbum(albumIndex+n);
 
 }
-function moveAlbums(n) {
+function moveAlbum(n) {
 	var i;
 	var current,next; 
-	var moveAlbumAnimClass={
+	var moveAlbumAnimClass = {
 		forCurent:"",
 		forNext:""
 	};
 	
+	// var AlbumTextAnimClass;
 	if(n>albumIndex) {
-		if(n>=albums.length) {n=0;}
-		moveAlbumAnimClass.forCurrent="moveLeftCurrentAlbum";
-		moveAlbumAnimClass.forNext="moveLeftNextAlbum";
+		if(n >= albums.length) {n=0;}
+		moveAlbumAnimClass.forCurrent = "moveLeftCurrentAlbum";
+		moveAlbumAnimClass.forNext = "moveLeftNextAlbum";
 		} else if (n<albumIndex) {
-			if(n==0) {n=albums.length-1;}
+			if(n<0) {n=albums.length-1;}
 			moveAlbumAnimClass.forCurrent="moveRightCurrentAlbum";
 			moveAlbumAnimClass.forNext="moveRightPreviousAlbum";
 		}
@@ -53,7 +54,7 @@ function moveAlbums(n) {
 		next.classList.add(moveAlbumAnimClass.forNext);
 		albumIndex = n;
 		albumName.style.display="none";
-		albumName.className = "albumName";
+		albumName.className = "albumName ";
 		albumName.innerText = albums[n].querySelector(".albumName").innerText;
 		albumName.style.display = "block";	
 	}
@@ -62,9 +63,9 @@ function moveAlbums(n) {
 
 var timer = null; 
 function setTimer() {
-	time = setInterval(function() {
+	timer = setInterval(function() {
 		plusAlbums(1);
-	}, 2000); 
+	},2000); 
 }
 
 setTimer();
