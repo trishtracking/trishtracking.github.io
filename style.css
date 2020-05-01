@@ -29,7 +29,7 @@
 
 .introHead { 
     grid-area: 2 / 1 / 3 / 2;
-    background-color: #450808;
+    background-color: #FFFFFF;
     position: relative;
     text-align: right; 
   }
@@ -44,7 +44,7 @@
 
 .carouselHead { 
     grid-area: 3 / 1 / 4 / 2;
-    background-color: #450808;
+    background-color: #FFFFFF;
     text-align: right;
   }
 
@@ -55,7 +55,7 @@
 
 .linksHead { 
     grid-area: 4 / 1 / 5 / 2;
-    background-color: #450808;
+    background-color: #FFFFFF;
     text-align: right;
   }
 
@@ -84,7 +84,7 @@ h1 {
   } 
 
 h2 {
-    color: #a78888;
+    color: #450808;
     font-size: 35px; 
     font-style: Bold;
     font-family: 'Ubuntu Mono', monospace;
@@ -110,7 +110,6 @@ p, a  {
       padding: 0;
       overflow: hidden;
       display: inline;
-      background-color: #333;
     }
     
     li {
@@ -129,7 +128,7 @@ p, a  {
     }
 
 
-    .heading li a :hover {
+    .heading ul>li>a:hover {
     background-color:#d67878;
     }
 
@@ -152,21 +151,23 @@ p, a  {
 
 .carouselBody .carouselDiv {
   width: 100%;
-  height: 400px;
-  max-width: 400px; 
-  /* position: relative; */
+  height: 480px;
+  max-width: 440px; 
+  position: relative; 
   margin-left: auto;
   margin-right: auto;
   display: block;
   user-select: none; 
-  padding: 10px; 
+  padding: 20px; 
   box-sizing: border-box; 
 }
  .carouselBody .carouselDiv .albumCrate {
   width: 100%;
-  height: 90%;
+  height: 100%;
   overflow: hidden;
   position: relative; 
+  margin-left: auto;
+  margin;right: auto; 
   background-color: #d67878;
  }
 
@@ -218,15 +219,17 @@ p, a  {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  display: block;
+  display: inline-block;
 	width: 400px;
 	height: 400px;
 	opacity: 1;
 }
 
 .carouselBody .carouselDiv .albumCrate .albumCovers img{
-  width: 100%;
-  height: 100%;
+  width: 400px;
+  height: 400px; 
+
+
 }
 
 
@@ -300,10 +303,6 @@ p, a  {
   position: absolute; 
   z-index: 1;
   bottom: 0;
-  color: #450808;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 20px; 
-  text-align: center; 
   width: 100%; 
   background: #a78888;
   height: 50px; 
@@ -313,32 +312,61 @@ p, a  {
 
 .carouselBody .carouselDiv .albumCrate>.albumNameHolder>.albumName {
   margin: 0;
+  z-index: 1; 
+  color: #450808;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 20px; 
+  text-align: center; 
 }
 
+.carouselBody .carouselDiv .albumCrate #dotsContainer{
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.carouselBody .carouselDiv .albumCrate #dotsContainer .dots{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: 5px;
+  background-color: #696969;
+  cursor: pointer;
+  transition:background-color 0.5s;
+}
+.carouselBody .carouselDiv .albumCrate #dotsContainer .dots:first-child{
+  margin-left: 0;
+}
+.carouselBody .carouselDiv #dotsContainer .dots:hover,
+.galleryContainer #dotsContainer .dots .active{
+  background-color: #4b4b4b;;
+}
 .carouselBody .carouselDiv .moveLeftCurrentAlbum{
   animation-name: moveLeftCurrent;
-  animation-duration: 0.8s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards; 
 }
 
 .carouselBody .carouselDiv .moveRightCurrentAlbum{
   animation-name: moveRightCurrent;
-  animation-duration: 0.8s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards; 
 }
 
 .carouselBody .carouselDiv .moveLeftNextAlbum{
   animation-name: moveLeftNext;
-  animation-duration: 0.8s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards; 
 }
 
 .carouselBody .carouselDiv .moveRightPreviousAlbum{
   animation-name: moveRightPrevious;
-  animation-duration: 0.8s;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-fill-mode:forwards; 
 }
@@ -350,7 +378,7 @@ p, a  {
 
 @keyframes moveLeftNext {
   from {margin-left: 100%; opacity: 1;}
-  to {margin-left: 0%%; opacity: 1;}
+  to {margin-left: 0%; opacity: 1;}
 }
 
 @keyframes moveRightCurrent {
@@ -361,4 +389,15 @@ p, a  {
 @keyframes moveRightPrevious {
   from {margin-left: -100%;opacity: 1;}
   to {margin-left: 0%;opacity: 1;}
+}
+
+.albumNameFromTop {
+  animation-name: albumNameFromTop;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in; 
+}
+
+@keyframes albumNameFromTop {
+  from {opacity: 0;margin-top: 100px}
+  to {opacity: 1;margin-top: 0px;}
 }
