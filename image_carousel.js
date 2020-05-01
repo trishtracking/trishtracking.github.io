@@ -21,7 +21,7 @@ function initAlbums(){
 	}
 
 	dots=[];
-    var dotsContainer=document.getElementById("dotsContainer"),i;
+	var dotsContainer=document.getElementById("dotsContainer"),i;
     for (i = 0; i < albums.length; i++) {
         var dot=document.createElement("span");
         dot.classList.add("dots");

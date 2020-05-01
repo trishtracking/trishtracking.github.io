@@ -53,11 +53,11 @@
     grid-area: 3 / 2 / 4 / 3;
   }
 
-.linksHead { 
+/* .linksHead { 
     grid-area: 4 / 1 / 5 / 2;
     background-color: #FFFFFF;
     text-align: right;
-  }
+  } */
 
 .linksBody { 
     grid-area: 4 / 2 / 5 / 3;
@@ -121,7 +121,7 @@ p, a  {
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
-      color: #450808 ;
+      color: #450808;
       font-size: 20px; 
       font-style: Bold;
       font-family: 'Ubuntu Mono', monospace;
@@ -134,71 +134,42 @@ p, a  {
 
 
 .icon {
-    width: 40px;
-    height: 40px;
+    width: 150px;
+    height: 150px;
     align: center;
-    border-width: 2px;
+    border-width: 3px;
     border-color: #450808;
-    padding: 10px; 
+    padding: 0px; 
     border-style: dashed;
     border-radius: 50%;
-    padding: 14px; 
+    padding: 0px; 
 }
 
 /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
 
-/* carousel css  */
+/* carousel css *deep breaths*  */
 
 .carouselBody .carouselDiv {
   width: 100%;
-  height: 480px;
-  max-width: 440px; 
-  position: relative; 
+  height: 500px;
+  max-width: 1000px; 
+  /* position: relative;  */
   margin-left: auto;
-  margin-right: auto;
-  display: block;
+  /* margin-right: auto; */
+  /* display: block; */
   user-select: none; 
-  padding: 20px; 
+  padding: 10px; 
   box-sizing: border-box; 
 }
  .carouselBody .carouselDiv .albumCrate {
   width: 100%;
-  height: 100%;
+  height: 90%;
   overflow: hidden;
   position: relative; 
   margin-left: auto;
   margin;right: auto; 
   background-color: #d67878;
  }
-
- /* play/pause button */
- /* .carouselBody .carouselDiv #playPause {
-  border: 0;
-  background: transparent;
-  box-sizing: border-box;
-  width: 0;
-  height: 74px;
-  cursor: pointer; 
-  z-index: 5; 
-  position: absolute;
-  border-color: transparent transparent transparent #450808;
-  transition: 200ms all ease; */
-
-  
-  
-
-  /* play state */
-  /* border-style: solid;
-  border-width: 37px 0 37px 60px;
-
-  &.paused {
-    border-style: double;
-    border-width: 0px 0 0px 60px;
-  }
-
-  &:hover {
-    border-color: transparent transparent transparent #450808;
-  } */
 
   .carouselBody .carouselDiv .albumCrate #playPause{
     width: 32px;
@@ -212,29 +183,35 @@ p, a  {
     cursor: pointer;
 }
 .carouselBody .carouselDiv .albumCrate #playPause:hover{
-    opacity: .7;
+    opacity: .65;
 }
 
 .carouselBody .carouselDiv .albumCrate .albumCovers {
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
   display: inline-block;
-	width: 400px;
+	width: 1000px;
 	height: 400px;
 	opacity: 1;
 }
 
 .carouselBody .carouselDiv .albumCrate .albumCovers img{
-  width: 400px;
-  height: 400px; 
-
-
+  width: 380px;
+  height: 380px; 
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 
 .carouselBody .carouselDiv .albumCrate .albumCovers .albumName {
-  display: none; 
+  display: none;
+  color: #450808 ;
+  font-size: 20px; 
+  font-style: Bold;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 /* left arrow div styling */
@@ -311,15 +288,15 @@ p, a  {
 }
 
 .carouselBody .carouselDiv .albumCrate>.albumNameHolder>.albumName {
-  margin: 0;
+  /* margin: 0; */
   z-index: 1; 
+  position: absolute;
   color: #450808;
   font-family: 'Ubuntu Mono', monospace;
   font-size: 20px; 
-  text-align: center; 
 }
 
-.carouselBody .carouselDiv .albumCrate #dotsContainer{
+/* .carouselBody .carouselDiv .albumCrate>#dotsContainer{
   width: 100%;
   height: 20px;
   text-align: center;
@@ -342,7 +319,7 @@ p, a  {
 .carouselBody .carouselDiv #dotsContainer .dots:hover,
 .galleryContainer #dotsContainer .dots .active{
   background-color: #4b4b4b;;
-}
+} */
 .carouselBody .carouselDiv .moveLeftCurrentAlbum{
   animation-name: moveLeftCurrent;
   animation-duration: 0.5s;
