@@ -5,25 +5,35 @@
      font-size: 10px;
     }
   }
+/*  flex so that left side is half right side 
+  box-1 {
+    background-color: dodgerblue;
+    flex: 2 2 150px;
+    height: 200px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    flex: 1 1 150px;
+    height: 200px; */
 
   .parent {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr repeat(3, 2fr) 1fr;
-    grid-column-gap: 10px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr repeat(3, 1fr) 1fr;
+    grid-column-gap: 20px;
     grid-row-gap: 0px;
     }
 
     
 .heading { 
     grid-area: 1 / 1 / 2 / 3; 
-    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+    box-shadow: 0 0 0px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
     z-index: 6;
     position: fixed;
     top: 0; 
-    width: 100%;
-    padding-bottom: 20px; 
-    background: rgb(153,98,149);
+    left: 0;
+    width: 100%; 
     background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%); 
   }
 
@@ -37,7 +47,7 @@
 .introBody {
     grid-area: 2 / 2 / 3 / 3;
     color: #2f2f31;
-    font-size: 20;
+    font-size: 2vmin;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.8;
   }
@@ -53,31 +63,33 @@
     grid-area: 3 / 2 / 4 / 3;
   }
 
-/* .linksHead { 
-    grid-area: 4 / 1 / 5 / 2;
-    background-color: #FFFFFF;
-    text-align: right;
-  } */
 
 .linksBody { 
     grid-area: 4 / 2 / 5 / 3;
+    display: flex; 
   }
 
 .foot { 
     grid-area: 5 / 1 / 6 / 3; 
-    padding: 20px;
+    padding: 0;
     text-align: center; 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.23) 0 6px 6px rgba(0,0,0,0.19), ;
     background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%);
   } 
 
-.foot:hover {
-    background-color: #714141;
-  }
+  a.anchor {
+    display: block;
+    position: relative;
+    top: 250px;
+    visibility: hidden;
+}
 
 h1 {
     color: #450808 ;
-    font-size: 50px; 
+    font-size: 5vmax; 
     font-style: Bold;
     font-family: 'Ubuntu Mono', monospace;
     text-align: center;
@@ -92,16 +104,17 @@ h2 {
 
 h3 {
     color: #450808 ;
-    font-size: 20px; 
+    font-size: 3vmin; 
     font-style: Bold;
     font-family: 'Ubuntu Mono', monospace;
   }
 
 p, a  {
     color: #2f2f31;
-    font-size: 20;
+    font-size: 2vmin;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.8;
+
     }
 
     ul {
@@ -122,20 +135,20 @@ p, a  {
       padding: 14px 16px;
       text-decoration: none;
       color: #450808;
-      font-size: 20px; 
+      font-size: 3vmin; 
       font-style: Bold;
       font-family: 'Ubuntu Mono', monospace;
     }
 
 
     .heading ul>li>a:hover {
-    background-color:#d67878;
+    background-color:#aef5f5;
     }
 
 
 .icon {
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
+    height: auto;
     align: center;
     border-width: 3px;
     border-color: #450808;
@@ -168,28 +181,28 @@ p, a  {
   position: relative; 
   margin-left: auto;
   margin;right: auto; 
-  background-color: #d67878;
+  background-color: #f5adad;
  }
 
-  .carouselBody .carouselDiv .albumCrate #playPause{
-    width: 32px;
-    height: 32px;
+  .carouselBody .carouselDiv .albumCrate #play{
+    width: 46px;
+    height: 46px;
     position: absolute;
-    background-image: url(playPause.png);
+    background-image: url(play.png);
     background-repeat: no-repeat;
     z-index: 5;
     background-size: cover;
     margin: 5px;
     cursor: pointer;
 }
-.carouselBody .carouselDiv .albumCrate #playPause:hover{
+.carouselBody .carouselDiv .albumCrate #play:hover{
     opacity: .65;
 }
 
 .carouselBody .carouselDiv .albumCrate .albumCovers {
   position: absolute;
   display: inline-block;
-	width: 1000px;
+  width: 635px;
 	height: 400px;
 	opacity: 1;
 }
@@ -209,7 +222,7 @@ p, a  {
 .carouselBody .carouselDiv .albumCrate .albumCovers .albumName {
   display: none;
   color: #450808 ;
-  font-size: 20px; 
+  font-size: 30px; 
   font-style: Bold;
   font-family: 'Ubuntu Mono', monospace;
 }
@@ -242,12 +255,12 @@ p, a  {
 
 /* hover action for arrows */
 .carouselBody .carouselDiv .albumCrate .leftArrow:hover {
-  background: #d67878; 
+  background: #f5adad; 
   cursor: w-resize;
 }
 
 .carouselBody .carouselDiv .albumCrate .rightArrow:hover {
-  background: #d67878; 
+  background: #f5adad; 
   cursor: e-resize;
 }
 
@@ -282,44 +295,21 @@ p, a  {
   bottom: 0;
   width: 100%; 
   background: #a78888;
-  height: 50px; 
-  line-height: 50px; 
+  color: #450808;
+  font-family: 'Ubuntu Mono', monospace;
+  height: 40px;
   overflow: hidden;  
 }
 
 .carouselBody .carouselDiv .albumCrate>.albumNameHolder>.albumName {
-  /* margin: 0; */
-  z-index: 1; 
-  position: absolute;
+  margin: 0;
+  position: relative;
+  text-align: center; 
   color: #450808;
   font-family: 'Ubuntu Mono', monospace;
-  font-size: 20px; 
+  font-size: 20px;
 }
 
-/* .carouselBody .carouselDiv .albumCrate>#dotsContainer{
-  width: 100%;
-  height: 20px;
-  text-align: center;
-  padding-top: 20px;
-  box-sizing: border-box;
-}
-.carouselBody .carouselDiv .albumCrate #dotsContainer .dots{
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  margin-left: 5px;
-  background-color: #696969;
-  cursor: pointer;
-  transition:background-color 0.5s;
-}
-.carouselBody .carouselDiv .albumCrate #dotsContainer .dots:first-child{
-  margin-left: 0;
-}
-.carouselBody .carouselDiv #dotsContainer .dots:hover,
-.galleryContainer #dotsContainer .dots .active{
-  background-color: #4b4b4b;;
-} */
 .carouselBody .carouselDiv .moveLeftCurrentAlbum{
   animation-name: moveLeftCurrent;
   animation-duration: 0.5s;
@@ -330,7 +320,7 @@ p, a  {
 .carouselBody .carouselDiv .moveRightCurrentAlbum{
   animation-name: moveRightCurrent;
   animation-duration: 0.5s;
-  animation-timing-function: linear;
+  animation-timing-function: linear;      
   animation-fill-mode: forwards; 
 }
 
@@ -343,7 +333,7 @@ p, a  {
 
 .carouselBody .carouselDiv .moveRightPreviousAlbum{
   animation-name: moveRightPrevious;
-  animation-duration: 0.5s;
+  animation-duration: 0.9s;
   animation-timing-function: linear;
   animation-fill-mode:forwards; 
 }
@@ -371,10 +361,21 @@ p, a  {
 .albumNameFromTop {
   animation-name: albumNameFromTop;
   animation-duration: 0.8s;
-  animation-timing-function: ease-in; 
+  animation-timing-function: linear; 
 }
 
 @keyframes albumNameFromTop {
+  from {opacity: 0; margin-top: -100px}
+  to {opacity: 1; margin-top: 0px;}
+}
+
+.albumNameFromBottom {
+  animation-name: albumNameFromTop;
+  animation-duration: 0.8s;
+  animation-timing-function: linear; 
+}
+
+@keyframes albumNameFromBottom {
   from {opacity: 0;margin-top: 100px}
-  to {opacity: 1;margin-top: 0px;}
+  to {opacity: 1;margin-top 0px;}
 }

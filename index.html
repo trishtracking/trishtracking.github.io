@@ -1,39 +1,28 @@
 <!DOCTYPE html>
  <html lang="en-gb">
   <head>
-    <!-- Metadata elements, such as link, meta, title, and style, 
-        typically go inside the head element.-->
         <meta charset="utf-8">
         <title>Patricia Wynne</title>
-        <link rel="icon" href="favicon.ico" />
+        <link class= "anchor" rel="icon" href="favicon.ico" />
         <link rel="stylesheet" href="style.css" />
         <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono|Open+Sans&display=swap" rel="stylesheet">
        <style>
             
         </style>
     </head>
-     <!-- Create a personal website
-
-            Create a one-page website in HTML and CSS (using some vanilla JavaScript if you’d like) and host it on GitHub Pages. Your commit history should tell a story, and your website must be written by you, and:
-            - Show us with your code who you are
-            - Demonstrate your learning from the prerequisites
-            - Tell us about why you are applying for the programme
-     -->
-
     
-    <body>
-        <div class="parent">
-        <div class="heading">
-            <header>
+<body>
+    <div class="parent">
+    <div class="heading">
+        <header>
                 <br>
                 <h1>Patricia Wynne | Founders + Coders 20 </h1>
                 <!-- navbar  -->
                 <nav id="nav">
                     <ul>
-                      <li><a href="#intro" accesskey="i">Intro</a></li>
                       <li><a href="#why" accesskey="w">Why I'm applying</a></li>
                       <li><a href="#coding_aids" accesskey="m">Music to code to</a></li>
-                      <li><a href="#links" accesskey="l">Links</a></li>
+                      <li><a href="#links" accesskey="l">My work online</a></li>
                     </ul>
                   </nav>
             </header>
@@ -42,18 +31,56 @@
              <!-- leftside subheading for intro section -->
             <div class="introHead"> 
                 <br>
-                <h2>A lil sub heading for ya</h2>
+                <h2>Why I want to be part of the Founders and Coders 20 cohort</h2>
             </div>
 
              <!-- intro section -->
             <div class="introBody"> 
                 <main>
-                <p id="intro">
+                <p id="why">
                 <section>
                 <br>    
-                TO ADD: Why coding</section>
+                    I started coding when I was about 11, making websites for my <a href="http://www.neopets.com/" target="_blank">Neopets</a> page (oh how I wish I could find it!), 
+                    with the help of <a href="http://www.lissaexplains.com/" target="_blank">Lissa Explains</a>. I loved the reward of seeing my lines of code turn in to functional creations that other people used. 
+                    I'm very glad to learn that iframes are now obsolete, because they were hellish.</p>
+                <p>From there, though, it seemed like coding wasn’t really meant for girls, 
+                    there was so much more to know that I felt I could learn, I didn’t know where to learn it,
+                    and there would always be people much better than me, and so I abandoned it.</p>
+
+                <p>Forward to recent times: for the past five years I've worked in customer support/operations departments for tech businesses- 
+                    often closely with the product teams. Support can be rewarding, but I've realised that my fascination lies more with helping solve technical customer issues, 
+                    and how this feedback informs new features. I get a lot of joy out of squashing bugs in our internal systems and helping colleagues and clients to solve their own issues. 
+                    I also love watching our product teams organise and learning of the workflows they implement to collaborate on problems.
+                    Both these things made me realise that I'd rather be on that side of the business.</p>
+
+                <p>This lead me to dip back in to coding and teaching myself online, and found that it was still so much fun. It became obvious to me that all those hours spent building sites when I was young was an experience of ‘flow state’, 
+                    and I haven’t really had that in my career to date, unless I’m working on something technical.
+                    Largely through the advocacy of various coding bootcamps that I’ve looked in to and from
+                    hearing other people’s stories, I'm sure now that coding most certainly is for girls, 
+                    it doesn’t matter that there'll always be people better than me, and there is so much that I am capable of learning. 
+                    Life is short, the world I was raised in barely exists anymore, it’s time to do what makes my brain feel good.</p>
+
+                <p>After many months of code tutorials and online courses, 
+                    I'm really craving a classroom collaborative environment. I saw Founders and Coders on Google Maps when I was looking at Finsbury Park- it seemed prophetic that such 
+                    a well regarded, socially focussed course classroom was minutes from where I live. 
+                    I've learnt more getting ready for this application than I have in all the time I spent messing around with self-paced tutorials, 
+                    and I know joining F&C will pour rocket fuel on that fire.</p>
+
+                <p>I love that Founders and Coders' has a strong focus on social impact projects. Particularly, I think increasing computer literacy could have massive benefits for a lot of people. 
+                    Not just for their education and careers, but also for mental health. 
+                    I think a lot about <a href="https://en.wikipedia.org/wiki/Neuroplasticity" target="_blank">neuroplasticity</a> and what constant 
+                    interaction with the internet and social media does to all of our brains- especially kids- and I think learning how to manipulate the internet for yourself 
+                    (like swapping Trump for a llama on the BBC news site!) goes a long way in regaining control over how you react to products that are designed to be sticky, 
+                    high-conversion, dopamine-pumping and ultimately addictive. I've seen the effects on myself in the way that I think and dream since I've started studying again. 
+                    I’ve also seen how learning even just a little bit gives confidence and independence, and that bad-ass feeling that maybe you <i>are</i> smart enough, and this <i>is</i> for you, and I’d love to help spread this to other people.</p>
+
+                <p>I'm looking forward to having the opportunity to learn with a group who are enjoying getting frustrated with problems and celebrating when we figure them out, 
+                    and having my knowledge put through that ultimate test of teaching others. I’d love to continue my coding education with people who are also interested in the social benefits of tech, which is why I want to join this particular course.</p>
+
+                <p>I hope you’ll have me!</p>
+</section>
                 </p>
-                <section>TO ADD: Why FAC 2020</section><br>
+                <br>
                 </main>
              </div>
 
@@ -79,10 +106,10 @@ Adding event listeners to react to user input -->
                 <!-- carousel-->
         <div class="carouselBody">
             <div class="carouselDiv">
-                <div class="albumCrate"> 
+                <div class="albumCrate" id="coding_aids"> 
 
                      <!-- controls  -->
-                    <div id="playPause" onclick="playPauseAlbums()" class="playbutton"></div>
+                    <div id="play" onclick="playAlbums()" class="playbutton"></div>
                     <div onclick="plusAlbums(-1)" class="nextPrevBtn leftArrow">
                         <span class="arrow arrowLeft"></span>
                     </div>
@@ -106,15 +133,15 @@ Adding event listeners to react to user input -->
                     </div>
 
                     <div class="albumCovers">
-                        <img src="classics.png" alt="Ratatat: Classics">
-                        <h3 class="albumName">Ratatat: Classics</h3>
+                        <img src="latenighttales.png" alt="Bonobo: Late Night Tales">
+                        <h3 class="albumName">Bonobo: Late Night Tales</h3>
                     </div>
                     <div class="albumCovers">
                         <img src="toddterje.png" alt="Todd Terje: It's Album Time">
                         <h3 class="albumName">Todd Terje: It's Album Time</h3>
                     </div>
 
-                <div id="dotsContainer"></div>
+                <!-- <div id="dotsContainer"></div> -->
                 </div>
 
             </div>
@@ -122,7 +149,7 @@ Adding event listeners to react to user input -->
             <!-- links section -->
             <div>
             </div>
-            <div class="linksBody"> 
+            <div class="linksBody" id="links"> 
                     <a target="_blank" accesskey="g" href="https://github.com/trishtracking/trishtracking.github.io"><img class="icon" src="github.png" alt="GitHub repo for this page"></a>
                     <a target="_blank" accesskey="f" href="https://www.freecodecamp.org/trishtracking"><img class="icon" src="fcc.png" alt="FreeCodeCamp profile" ></a>
                     <a target="_blank" accesskey="c" href="https://www.codewars.com/users/trishtracking"><img class="icon" src="codewars.png" alt="CodeWars profile"></a>

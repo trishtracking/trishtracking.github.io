@@ -7,8 +7,8 @@ var albumName;
 function initAlbums(){
 	albumIndex=0;
 	albums=document.getElementsByClassName("albumCovers"); //array of all the album images with the class .albumCovers
-	albums[albumIndex].style.opacity= 0; //initiates the album 
-	albumName=document.querySelector(".albumNameHolder.albumName");
+	albums[albumIndex].style.opacity= 1; //initiates the album 
+	albumName=document.querySelector(".albumNameHolder .albumName");
 	albumName.innerText=albums[albumIndex].querySelector(".albumName").innerText; 
 
 
@@ -20,16 +20,6 @@ function initAlbums(){
 		}
 	}
 
-	dots=[];
-	var dotsContainer=document.getElementById("dotsContainer"),i;
-    for (i = 0; i < albums.length; i++) {
-        var dot=document.createElement("span");
-        dot.classList.add("dots");
-        dotsContainer.append(dot);
-        dot.setAttribute("onclick","moveAlbum("+i+")");
-        dots.push(dot);
-    }
-    dots[albumIndex].classList.add("active");
 }
 initAlbums(); 
 function plusAlbums(n) {
@@ -55,7 +45,7 @@ function moveAlbum(n) {
 			if(n<0) {n=albums.length-1;}
 			moveAlbumAnimClass.forCurrent="moveRightCurrentAlbum";
 			moveAlbumAnimClass.forNext="moveRightPreviousAlbum";
-			albumNameAnimClass="albumNameFromTop";
+			albumNameAnimClass="albumNameFromBottom";
 		}
 	
 	if(n!=albumIndex) {
@@ -70,7 +60,7 @@ function moveAlbum(n) {
 		next.classList.add(moveAlbumAnimClass.forNext);
 		albumIndex = n;
 		albumName.style.display="none";
-		albumName.className = "albumName";
+		albumName.className = "albumName "+albumNameAnimClass;
 		albumName.innerText = albums[n].querySelector(".albumName").innerText;
 		albumName.style.display = "block";	
 	}
@@ -85,15 +75,15 @@ function setTimer() {
 }
 
 setTimer();
-function playPauseAlbums() {
-	var playPauseBtn = document.getElementById("playPause");
+function playAlbums() {
+	var playBtn = document.getElementById("play");
 	if(timer == null) {
 		setTimer();
-		playPauseBtn.style.backgroundPositionY="0px" }
+		playBtn.style.backgroundPositionY="0px" }
 		else { 
 			clearInterval(timer);
 			timer = null;
-			playPauseBtn.style.backgroundPositionY = "-33px" //moves playpause image up by 33px to reveal pause button
+			playBtn.style.backgroundPositionY = "-50px" //moves playpause image up by 33px to reveal pause button
 		}
 	}
 
