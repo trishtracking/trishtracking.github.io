@@ -5,28 +5,17 @@
      font-size: 10px;
     }
   }
-/*  flex so that left side is half right side 
-  box-1 {
-    background-color: dodgerblue;
-    flex: 2 2 150px;
-    height: 200px;
-  }
 
-  #box-2 {
-    background-color: orangered;
-    flex: 1 1 150px;
-    height: 200px; */
-
-  .parent {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr repeat(3, 1fr) 1fr;
-    grid-column-gap: 20px;
-    grid-row-gap: 0px;
-    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: repeat(2, 1fr) repeat(2, 2.2fr) 2fr repeat(2, .8fr);
+      grid-column-gap: 20px;
+      grid-row-gap: 0px;
+      }
 
     
-.heading { 
+.heading { /*div1 */
     grid-area: 1 / 1 / 2 / 3; 
     box-shadow: 0 0 0px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
     z-index: 6;
@@ -37,40 +26,67 @@
     background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%); 
   }
 
-.introHead { 
-    grid-area: 2 / 1 / 3 / 2;
+.profilePic { /*div2*/ 
+    grid-area: 2 / 2 / 3 / 2;
     background-color: #FFFFFF;
     position: relative;
-    text-align: right; 
-  }
-
-.introBody {
-    grid-area: 2 / 2 / 3 / 3;
-    color: #2f2f31;
-    font-size: 2vmin;
-    font-family: 'Open Sans', sans-serif;
-    line-height: 1.8;
-  }
-
-.carouselHead { 
-    grid-area: 3 / 1 / 4 / 2;
-    background-color: #FFFFFF;
     text-align: right;
   }
 
+.contentHead1 { /*div4*/
+    grid-area: 3 / 1 / 4 / 2;
+    background-color: #FFFFFF;
+    position: relative;
+    text-align: right; 
+    padding-left: 15%
+  }
 
-.carouselBody { 
+.contentBody1 { /*div5 */
     grid-area: 3 / 2 / 4 / 3;
+    color: #2f2f31;
+    font-size: 2.5vmin;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.8;
+    padding-right: 15%; 
+  }
+
+.contentHead2 { /*div6 */
+  grid-area: 4 / 1 / 5 / 2;
+  background-color: #FFFFFF;
+  position: relative;
+  text-align: right; 
+  padding-left: 15%
+}
+
+.contentBody2 { /*div7 */
+  grid-area: 4 / 2 / 5 / 3;
+  color: #2f2f31;
+  font-size: 2.5vmin;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8;
+  padding-right: 15%; 
+}
+
+.carouselHead { /*div8 */
+    grid-area: 5 / 1 / 6 / 2;
+    background-color: #FFFFFF;
+    text-align: right;
+    padding-left: 15%; 
   }
 
 
-.linksBody { 
-    grid-area: 4 / 2 / 5 / 3;
-    display: flex; 
+.carouselBody { /*div9 */
+    grid-area: 5 / 2 / 6 / 3;
   }
 
-.foot { 
-    grid-area: 5 / 1 / 6 / 3; 
+.linksBody { /*div10 */
+    grid-area: 6 / 1 / 7 / 3;
+    display: inline-block; 
+    text-align: center; 
+  }
+
+.foot { /*div11 */
+    grid-area: 7 / 1 / 8 / 3; 
     padding: 0;
     text-align: center; 
     width: 100%;
@@ -111,9 +127,9 @@ h3 {
 
 p, a  {
     color: #2f2f31;
-    font-size: 2vmin;
+    font-size: 2.5vmin;
     font-family: 'Open Sans', sans-serif;
-    line-height: 1.8;
+    line-height: 2;
 
     }
 
@@ -141,38 +157,50 @@ p, a  {
     }
 
 
-    .heading ul>li>a:hover {
-    background-color:#aef5f5;
-    }
+  .heading ul>li>a:hover {
+      background-color:#aef5f5;
+  }
 
 
 .icon {
-    max-width: 150px;
+    width: 150px; 
+    max-width: 80%;
     height: auto;
-    align: center;
     border-width: 3px;
     border-color: #450808;
     padding: 0px; 
+    margin: 0px 10px 0px 10px; 
     border-style: dashed;
     border-radius: 50%;
     padding: 0px; 
 }
 
-/* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+.profile {
+  width: 200px; 
+  max-width: 100%;
+  height: auto;
+  border-width: 3px;
+  border-color: #450808;
+  padding: 0px; 
+  margin: 20px;
+  border-style: dashed;
+  border-radius: 50%;
+  padding: 0px; 
+}
+
 
 /* carousel css *deep breaths*  */
 
 .carouselBody .carouselDiv {
   width: 100%;
   height: 500px;
-  max-width: 1000px; 
-  /* position: relative;  */
-  margin-left: auto;
-  /* margin-right: auto; */
-  /* display: block; */
+  max-width: 800px; 
+  position: relative;  
+  margin-right: auto; 
+  display: block; 
   user-select: none; 
-  padding: 10px; 
   box-sizing: border-box; 
+  padding-right: 15%;
 }
  .carouselBody .carouselDiv .albumCrate {
   width: 100%;
@@ -181,6 +209,9 @@ p, a  {
   position: relative; 
   margin-left: auto;
   margin;right: auto; 
+  border-width: 3px;
+  border-color: #450808;
+  border-style: dashed;
   background-color: #f5adad;
  }
 
@@ -202,7 +233,7 @@ p, a  {
 .carouselBody .carouselDiv .albumCrate .albumCovers {
   position: absolute;
   display: inline-block;
-  width: 635px;
+  width: 600px;
 	height: 400px;
 	opacity: 1;
 }
@@ -210,7 +241,7 @@ p, a  {
 .carouselBody .carouselDiv .albumCrate .albumCovers img{
   width: 380px;
   height: 380px; 
-  position: absolute;
+  position: relative;
   margin: auto;
   top: 0;
   left: 0;
@@ -218,6 +249,7 @@ p, a  {
   bottom: 0;
 }
 
+/* captions */
 
 .carouselBody .carouselDiv .albumCrate .albumCovers .albumName {
   display: none;
@@ -225,6 +257,27 @@ p, a  {
   font-size: 30px; 
   font-style: Bold;
   font-family: 'Ubuntu Mono', monospace;
+}
+
+.carouselBody .carouselDiv .albumCrate>.albumNameHolder {
+  position: absolute; 
+  z-index: 1;
+  bottom: 0;
+  width: 100%; 
+  background: #a78888;
+  color: #450808;
+  font-family: 'Ubuntu Mono', monospace;
+  height: 45px;
+  overflow: hidden;  
+}
+
+.carouselBody .carouselDiv .albumCrate>.albumNameHolder>.albumName {
+  margin: 0;
+  position: relative;
+  text-align: center; 
+  color: #450808;
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 20px;
 }
 
 /* left arrow div styling */
@@ -289,26 +342,8 @@ p, a  {
   transform: rotateZ(45deg);
 }
 
-.carouselBody .carouselDiv .albumCrate>.albumNameHolder {
-  position: absolute; 
-  z-index: 1;
-  bottom: 0;
-  width: 100%; 
-  background: #a78888;
-  color: #450808;
-  font-family: 'Ubuntu Mono', monospace;
-  height: 40px;
-  overflow: hidden;  
-}
 
-.carouselBody .carouselDiv .albumCrate>.albumNameHolder>.albumName {
-  margin: 0;
-  position: relative;
-  text-align: center; 
-  color: #450808;
-  font-family: 'Ubuntu Mono', monospace;
-  font-size: 20px;
-}
+/* animations */
 
 .carouselBody .carouselDiv .moveLeftCurrentAlbum{
   animation-name: moveLeftCurrent;
