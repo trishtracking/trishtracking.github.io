@@ -15,7 +15,7 @@
   } 
 
     
-.heading { /*div1 */
+.heading { 
     grid-area: 1 / 1 / 2 / 3; 
     position: fixed;
     box-shadow: 0 0 0px rgba(0,0,0,0.19), 0 15px 10px rgba(0,0,0,0.15); 
@@ -26,7 +26,7 @@
     background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%); 
   }
 
-.profilePic { /*div2*/ 
+.profilePic { 
     grid-area: 2 / 1 / 3 / 3;
     background-color: #FFFFFF;
     position: relative;
@@ -35,7 +35,7 @@
     padding-right: 40px; 
   }
 
-.contentHead1 { /*div4*/
+.contentHead1 { 
     grid-area: 3 / 1 / 4 / 2;
     background-color: #FFFFFF;
     position: relative;
@@ -49,7 +49,7 @@
     top:-220px;
   }
 
-.contentBody1 { /*div5 */
+.contentBody1 { 
     grid-area: 3 / 2 / 4 / 3;
     color: #2f2f31;
     font-size: 2.5vmin;
@@ -58,7 +58,7 @@
     padding-right: 15%; 
   }
 
-.contentHead2 { /*div6 */
+.contentHead2 { 
   grid-area: 4 / 1 / 5 / 2;
   background-color: #FFFFFF;
   position: relative;
@@ -66,7 +66,7 @@
   padding-left: 15%
 }
 
-.contentBody2 { /*div7 */
+.contentBody2 { 
   grid-area: 4 / 2 / 5 / 3;
   color: #2f2f31;
   font-size: 2.5vmin;
@@ -75,7 +75,7 @@
   padding-right: 15%; 
 }
 
-.carouselHead { /*div8 */
+.carouselHead { 
     grid-area: 5 / 1 / 6 / 2;
     background-color: #FFFFFF;
     text-align: right;
@@ -89,11 +89,11 @@
   }
 
 
-.carouselBody { /*div9 */
+.carouselBody { 
     grid-area: 5 / 2 / 6 / 3;
   }
 
-.linksBody { /*div10 */
+.linksBody {
     grid-area: 6 / 1 / 7 / 3;
     display: inline-block;
     position: relative;  
@@ -105,7 +105,7 @@
     top:-240px;
   }
 
-.foot { /*div11 */
+.foot { 
     grid-area: 7 / 1 / 8 / 3; 
     text-align: center; 
     width: 100%;
@@ -353,35 +353,6 @@ p, a  {
 .carouselBody .carouselDiv .albumCrate .arrow.arrowRight {
   transform: rotateZ(45deg);
 }
-
-/* anchor links spacing*/
-/* 
-.contentHeat1:before { 
-  content: ''; 
-  display: block; 
-  position: relative; 
-  width: 0; 
-  height: 0px; 
-  margin-top: -200px;
-} 
-
-.carouselHead:before { 
-  content: ''; 
-  display: block; 
-  position: relative; 
-  width: 0; 
-  height: 100px; 
-  margin-top: -200px;
-} 
-
-.linksBody:before { 
-  content: ''; 
-  display: block; 
-  position: relative; 
-  width: 0; 
-  height: 0px; 
-  margin-top: -200px; 
-}  */
 
 /* animations */
 

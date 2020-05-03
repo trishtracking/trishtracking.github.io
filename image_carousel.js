@@ -6,8 +6,8 @@ var albumName;
 
 function initAlbums(){
 	albumIndex=0;
-	albums=document.getElementsByClassName("albumCovers"); //array of all the album images with the class .albumCovers
-	albums[albumIndex].style.opacity= 1; //initiates the album 
+	albums=document.getElementsByClassName("albumCovers"); 
+	albums[albumIndex].style.opacity= 1; 
 	albumName=document.querySelector(".albumNameHolder .albumName");
 	albumName.innerText=albums[albumIndex].querySelector(".albumName").innerText; 
 
@@ -71,7 +71,7 @@ var timer = null;
 function setTimer() {
 	timer = setInterval(function() {
 		plusAlbums(1);
-	},1500); 
+	},1900); 
 }
 
 setTimer();
@@ -83,7 +83,7 @@ function playAlbums() {
 		else { 
 			clearInterval(timer);
 			timer = null;
-			playBtn.style.backgroundPositionY = "-44px" //moves playpause image up by 33px to reveal pause button
+			playBtn.style.backgroundPositionY = "-44px" 
 		}
 	}
 
