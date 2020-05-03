@@ -5,21 +5,21 @@
      font-size: 10px;
     }
   }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-template-rows: repeat(2, 1fr) repeat(2, 2.2fr) 2fr repeat(2, .8fr);
-      grid-column-gap: 20px;
-      grid-row-gap: 0px;
-      }
+  
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, .5fr) repeat(2, 1.5fr) 1fr repeat(2, .5fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 0px;
+  } 
 
     
 .heading { /*div1 */
     grid-area: 1 / 1 / 2 / 3; 
-    box-shadow: 0 0 0px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
-    z-index: 6;
     position: fixed;
+    box-shadow: 0 0 0px rgba(0,0,0,0.19), 0 15px 10px rgba(0,0,0,0.15); 
+    z-index: 6;
     top: 0; 
     left: 0;
     width: 100%; 
@@ -27,10 +27,12 @@
   }
 
 .profilePic { /*div2*/ 
-    grid-area: 2 / 2 / 3 / 2;
+    grid-area: 2 / 1 / 3 / 3;
     background-color: #FFFFFF;
     position: relative;
-    text-align: right;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px; 
   }
 
 .contentHead1 { /*div4*/
@@ -39,6 +41,12 @@
     position: relative;
     text-align: right; 
     padding-left: 15%
+  }
+
+
+  .contentHead1 .span1 { 
+    position:absolute; 
+    top:-220px;
   }
 
 .contentBody1 { /*div5 */
@@ -71,7 +79,13 @@
     grid-area: 5 / 1 / 6 / 2;
     background-color: #FFFFFF;
     text-align: right;
+    position: relative; 
     padding-left: 15%; 
+  }
+
+.carouselHead .span2 { 
+    position:absolute; 
+    top:-240px;
   }
 
 
@@ -81,19 +95,24 @@
 
 .linksBody { /*div10 */
     grid-area: 6 / 1 / 7 / 3;
-    display: inline-block; 
+    display: inline-block;
+    position: relative;  
     text-align: center; 
+  }
+
+.linksBody .span3 { 
+    position:absolute; 
+    top:-240px;
   }
 
 .foot { /*div11 */
     grid-area: 7 / 1 / 8 / 3; 
-    padding: 0;
     text-align: center; 
     width: 100%;
     bottom: 0;
     right: 0;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.23) 0 6px 6px rgba(0,0,0,0.19), ;
     background: linear-gradient(45deg, #f5adad, 50%, #aef5f5 80%);
+    box-shadow: 0px -15px 10px 0px rgba(0,0,0,0.15);
   } 
 
   a.anchor {
@@ -113,7 +132,7 @@ h1 {
 
 h2 {
     color: #450808;
-    font-size: 35px; 
+    font-size: 6vmin; 
     font-style: Bold;
     font-family: 'Ubuntu Mono', monospace;
   }
@@ -194,35 +213,32 @@ p, a  {
 .carouselBody .carouselDiv {
   width: 100%;
   height: 500px;
-  max-width: 800px; 
-  position: relative;  
-  margin-right: auto; 
-  display: block; 
+  max-width: 700px; 
+  margin-right: auto;
+  text-align: center;
   user-select: none; 
   box-sizing: border-box; 
-  padding-right: 15%;
 }
  .carouselBody .carouselDiv .albumCrate {
   width: 100%;
-  height: 90%;
+  height: 80%;
   overflow: hidden;
   position: relative; 
+  display: block; 
   margin-left: auto;
-  margin;right: auto; 
-  border-width: 3px;
-  border-color: #450808;
-  border-style: dashed;
+  margin-right: auto; 
   background-color: #f5adad;
  }
 
   .carouselBody .carouselDiv .albumCrate #play{
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     position: absolute;
     background-image: url(play.png);
     background-repeat: no-repeat;
     z-index: 5;
     background-size: cover;
+    text-align: center;
     margin: 5px;
     cursor: pointer;
 }
@@ -232,9 +248,7 @@ p, a  {
 
 .carouselBody .carouselDiv .albumCrate .albumCovers {
   position: absolute;
-  display: inline-block;
-  width: 600px;
-	height: 400px;
+  display: block;
 	opacity: 1;
 }
 
@@ -242,11 +256,9 @@ p, a  {
   width: 380px;
   height: 380px; 
   position: relative;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 44%;
+  right: 44%;
+  display: block;
 }
 
 /* captions */
@@ -342,6 +354,34 @@ p, a  {
   transform: rotateZ(45deg);
 }
 
+/* anchor links spacing*/
+/* 
+.contentHeat1:before { 
+  content: ''; 
+  display: block; 
+  position: relative; 
+  width: 0; 
+  height: 0px; 
+  margin-top: -200px;
+} 
+
+.carouselHead:before { 
+  content: ''; 
+  display: block; 
+  position: relative; 
+  width: 0; 
+  height: 100px; 
+  margin-top: -200px;
+} 
+
+.linksBody:before { 
+  content: ''; 
+  display: block; 
+  position: relative; 
+  width: 0; 
+  height: 0px; 
+  margin-top: -200px; 
+}  */
 
 /* animations */
 

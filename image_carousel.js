@@ -83,7 +83,7 @@ function playAlbums() {
 		else { 
 			clearInterval(timer);
 			timer = null;
-			playBtn.style.backgroundPositionY = "-50px" //moves playpause image up by 33px to reveal pause button
+			playBtn.style.backgroundPositionY = "-44px" //moves playpause image up by 33px to reveal pause button
 		}
 	}
 
