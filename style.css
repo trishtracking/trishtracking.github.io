@@ -423,5 +423,5 @@ p, a  {
 
 @keyframes albumNameFromBottom {
   from {opacity: 0;margin-top: 100px}
-  to {opacity: 1;margin-top 0px;}
+  to {opacity: 1;margin-top: 0px;}
 }
