@@ -87,13 +87,15 @@ function playAlbums() {
 		}
 	}
 
-	function keyboardNav(e) {
-		if (e.keyCode == "37") {
-			moveAlbum();
+	//arrowleft = 37 arrowright = 39 
+	function keyboardNav(key) {
+		if (key.keyCode == "37") {
+		plusAlbums(1);
 			
-		} else if (e.keyCode == "39") {
-			moveAlbum();
+		} else if (key.keyCode == "39") {
+		plusAlbums(-1);
 		}
+
 	}
 	
 	window.addEventListener("keydown", keyboardNav);
