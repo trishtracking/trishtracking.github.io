@@ -89,15 +89,16 @@ function playAlbums() {
 
 	//arrowleft = 37 arrowright = 39 
 	function keyboardNav(key) {
-		if (key.keyCode == "37") {
+		if (key.keyCode == "39") {
 		plusAlbums(1);
 			
-		} else if (key.keyCode == "39") {
+		} else if (key.keyCode == "37") {
 		plusAlbums(-1);
 		}
 
 	}
 	
 	window.addEventListener("keydown", keyboardNav);
+
 
 
