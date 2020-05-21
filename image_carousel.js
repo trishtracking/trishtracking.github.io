@@ -87,5 +87,15 @@ function playAlbums() {
 		}
 	}
 
+	function keyboardNav(e) {
+		if (e.keyCode == "37") {
+			moveAlbum();
+			
+		} else if (e.keyCode == "39") {
+			moveAlbum();
+		}
+	}
+	
+	window.addEventListener("keydown", keyboardNav);
 
 
