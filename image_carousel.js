@@ -12,7 +12,7 @@ function initAlbums(){
 	albumName.innerText=albums[albumIndex].querySelector(".albumName").innerText; 
 
 
- 	if(albums.length<2){
+if(albums.length<2){
 		var nextPrevBtns=document.querySelector(".leftArrow,.rightArrow");
 		nextPrevBtns.style.display="none";
 	for (i = 0; i < nextPrevBtn.length; i++) {
