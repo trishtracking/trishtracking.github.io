@@ -15,7 +15,7 @@
   } 
 
     
-.heading { 
+header { 
     grid-area: 1 / 1 / 2 / 3; 
     position: fixed;
     box-shadow: 0 0 0px rgba(0,0,0,0.19), 0 15px 10px rgba(0,0,0,0.15); 
@@ -186,12 +186,13 @@ p, a  {
     max-width: 80%;
     height: auto;
     border-width: 3px;
-    border-color: #450808;
+    border-color: #450808; 
     padding: 0px; 
     margin: 0px 10px 0px 10px; 
-    border-style: dashed;
+    border-style: dashed; 
     border-radius: 50%;
     padding: 0px; 
+    box-shadow: 0px -15px 10px 0px rgba(0,0,0,0.15);
 }
 
 .profile {
@@ -199,10 +200,10 @@ p, a  {
   max-width: 100%;
   height: auto;
   border-width: 3px;
-  border-color: #450808;
+  border-color: #450808; 
   padding: 0px; 
   margin: 20px;
-  border-style: dashed;
+  border-style: dashed; 
   border-radius: 50%;
   padding: 0px; 
 }
@@ -219,7 +220,7 @@ p, a  {
   user-select: none; 
   box-sizing: border-box; 
 }
- .carouselBody .carouselDiv .albumCrate {
+.carouselBody .carouselDiv .albumCrate {
   width: 100%;
   height: 80%;
   overflow: hidden;
@@ -228,7 +229,7 @@ p, a  {
   margin-left: auto;
   margin-right: auto; 
   background-color: #f5adad;
- }
+}
 
   .carouselBody .carouselDiv .albumCrate #play{
     width: 44px;
@@ -329,7 +330,7 @@ p, a  {
   cursor: e-resize;
 }
 
-/* making little arrows with css :) */
+/* making little arrows with css */
 .carouselBody .carouselDiv .albumCrate .arrow {
   display: inline-block;
   border: 2.5px solid #450808; 
@@ -423,5 +424,5 @@ p, a  {
 
 @keyframes albumNameFromBottom {
   from {opacity: 0;margin-top: 100px}
-  to {opacity: 1;margin-top 0px;}
+  to {opacity: 1;margin-top: 0px;}
 }

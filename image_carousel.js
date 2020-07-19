@@ -12,7 +12,7 @@ function initAlbums(){
 	albumName.innerText=albums[albumIndex].querySelector(".albumName").innerText; 
 
 
- 	if(albums.length<2){
+if(albums.length<2){
 		var nextPrevBtns=document.querySelector(".leftArrow,.rightArrow");
 		nextPrevBtns.style.display="none";
 	for (i = 0; i < nextPrevBtn.length; i++) {
@@ -86,6 +86,19 @@ function playAlbums() {
 			playBtn.style.backgroundPositionY = "-44px" 
 		}
 	}
+
+	//arrowleft = 37 arrowright = 39 
+	function keyboardNav(key) {
+		if (key.keyCode == "39") {
+		plusAlbums(1);
+			
+		} else if (key.keyCode == "37") {
+		plusAlbums(-1);
+		}
+
+	}
+	
+	window.addEventListener("keydown", keyboardNav);
 
 
 
